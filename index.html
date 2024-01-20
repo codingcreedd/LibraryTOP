@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="lib.js" defer></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <main>
+        <section class="sidebar">
+            <p>Library</p>
+            
+            <div class="sidebar-option" id="home-option">
+                <i class='bx bxs-home'></i>
+                <p>Add Books</p>
+            </div>
+      
+            <div class="sidebar-option" id="collections-option">
+                <i class='bx bxs-collection' ></i>
+                <p>Collections</p>
+            </div>
+     
+            
+            <div class="sidebar-option" id="to-read-option">
+                <i class='bx bx-time-five'></i>
+                <p>To Read</p>
+            </div>
+        
+            <div class="sidebar-option" id="read-option">
+                <i class='bx bx-check'></i>
+                <p>Read</p>
+            </div>
+        
+            <div class="sidebar-option" id="favourites-option">
+                <i class='bx bxs-star' ></i>
+                <p>Favourites</p>
+            </div>
+            
+           
+            
+        </section>
+
+        <section class="book-type-section">
+            <ul>
+                <li class="type-section all-books-section">All books<span class="type-after-span home-after-span"></span></li>
+                <li class="type-section fiction-section" style="display: none;">Fiction<span class="type-after-span fiction-after-span"></span></li>
+                <li class="type-section non-fiction-section" style="display: none;">Non-Fiction<span class="type-after-span non-fiction-after-span"></span></li>
+            </ul>
+            <button id="add-type-section-btn">+</button>
+        </section>
+
+        <section class="books all-books">
+            
+        </section>
+
+        <section class="books book-options" style="display: none;">
+
+        </section>
+
+        <section class="add-book-section" style="display: none;">
+            <form class="add-book-card">
+                <div class="top-section">
+                    <h1>Add New Book</h1>
+                    <i class='bx bx-x closeAddBookSetion'></i>
+                </div>
+                <input name="book_name" type="text" placeholder="Book name" class="book-input name-input" required>
+                <input name="author_name" type="text" placeholder="Book Author" class="book-input author-input" required>
+                <input name="pages" type="text" placeholder="Pages" class="book-input pages-input" required>
+                <div class="book-type-div">
+                    <label for="fiction-type">
+                        <input type="radio" id="fiction-type" class="book-type" name="book_type" value="fiction">
+                        Fiction
+                    </label>
+                    <label for="non-fiction-type">
+                        <input type="radio" class="book-type" name="book_type" value="non-fiction">
+                        Non-fiction
+                    </label>
+                </div>
+                <button type="button" class="submit-btn">Add Book</button>
+            </form>
+        </section>
+        
+    </main>
+
+    <script>
+        const homeButton = document.getElementById('home-option');
+        homeButton.style.background = 'white';
+        homeButton.style.color = '#042f2e'
+
+        const allBooksButton = document.querySelector('.all-books-section');
+        allBooksButton.style.color = '#042f2e';
+        const allBooksAfter = document.querySelector('.type-after-span');
+        allBooksAfter.style.cssText = 'width: 100%';
+    </script>
+
+</body>
+</html>

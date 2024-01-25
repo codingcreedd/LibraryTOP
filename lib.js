@@ -165,17 +165,22 @@ function renderBook(){
 }
 
 
-function addBookToLibrary(radioButtonValue){
-    const bookObj = {};
-    bookObj.id = BOOK_ID;
-    bookObj.name = bookNameInput.value;
-    bookObj.author = authorNameInput.value;
-    bookObj.pages = pagesInput.value;
-    bookObj.status = false;
-    bookObj.favourite = false;
-    bookObj['to-read'] = false;
-    bookObj.read = false;
-    bookObj.type = `${radioButtonValue}`;
+class Book {
+    constructor(id, name, author, pages, status, favourite, read, type) {
+        this.id = id;
+        this.name = name; 
+        this.author = author; 
+        this.pages = pages; 
+        this.status = status;
+        this.favourite = favourite;
+        this.read = read;
+        this.type = type;
+        this['to-read'] = false; 
+    }
+}
+
+function addBookToLibrary(radioButtonValue) {
+    const bookObj = new Book(BOOK_ID, bookNameInput.value, authorNameInput.value, pagesInput.value, false, false, false, radioButtonValue);
 
     library.push(bookObj);
 }
